@@ -4,7 +4,7 @@
 
 HPC and infrastructure engineer. M.Eng.-equivalent from Polytech Paris-Saclay (September 2026) after three years of work-study at EDF R&D and a research stay at Oak Ridge National Laboratory.
 
-**Available January 2027** for HPC, scientific software or infra roles, Paris or Bay Area. For US roles I need visa sponsorship (J-1 or H-1B, which is cap-exempt at national labs and universities).
+**Available January 2027** for HPC, scientific software or infra roles, Paris or Bay Area. For US roles I need visa sponsorship (J-1 or H-1B; H-1B is cap-exempt at universities and most national labs, so no lottery).
 
 [Portfolio](https://ethan-puyaubreau.github.io) · [LinkedIn](https://www.linkedin.com/in/ethan-puyaubreau/) · [Google Scholar](https://scholar.google.com/citations?user=VH9ZyxYAAAAJ) · [ORCID](https://orcid.org/0009-0003-1770-8830) · [ethan.puyaubreau@gmail.com](mailto:ethan.puyaubreau@gmail.com)
 
@@ -15,9 +15,9 @@ HPC and infrastructure engineer. M.Eng.-equivalent from Polytech Paris-Saclay (S
 Graduate Research Fellow (GRO program). I built two GPU energy-measurement tools for **Kokkos**, the US Department of Energy's performance-portability framework: a multi-vendor one for NVIDIA and AMD GPUs (NVML, ROCm-SMI) and a finer NVIDIA one that samples every ~10 ms.
 
 - **Ran on Frontier**, the first exascale supercomputer, and on production SLURM clusters.
-- **Found a cost wall-clock profiling misses.** Two ArborX algorithms with the same run time drew 925 J and 784 J: 15% apart in energy.
+- **Found a cost wall-clock profiling misses.** Two ArborX algorithms with identical run times used 925 J and 784 J: a 15% energy gap invisible to a timer.
 - **Went through public review.** [9 PRs to kokkos-tools and LAMMPS](https://github.com/search?q=author%3Aethan-puyaubreau+is%3Apr&type=pullrequests), 3 merged, including the sampling daemon ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300)).
-- **Presented.** Poster at the 2025 Smoky Mountains Conference ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), invited to SC25. Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
+- **Presented.** Poster at the 2025 Smoky Mountains Conference ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), and invited to present at SC25. Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
 
 The analysis side is open source: [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos) loads Kokkos energy output into PostgreSQL and Grafana.
 
@@ -25,7 +25,7 @@ The analysis side is open source: [energy-dashboard-for-kokkos](https://github.c
 
 On the C++ platform that simulates EDF's nuclear reactor cores (500k+ lines, 30+ engineers):
 
-- **Wrote the memory and compute-time profilers** (C++, Python bindings). The memory one found a blow-up the team had chased for days.
+- **Wrote the memory and compute-time profilers** (C++, Python bindings). The memory profiler pinned down a memory blow-up the team had been chasing for days.
 - **Rebuilt the neutronics solvers as a modular prototype** and measured it with those tools: bit-for-bit identical results, **up to 12% faster** on the compute core, **40% lower peak memory**.
 - **Automated the test and delivery chain**: cluster runs, result validation, PostgreSQL ingestion, Debian packaging (Jenkins, GitLab CI/CD).
 

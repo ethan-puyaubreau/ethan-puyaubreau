@@ -6,7 +6,7 @@ Research software engineer in high-performance computing. M.Eng.-equivalent from
 
 **Available early 2027** for research software engineer roles in HPC and scientific computing, at national labs, universities or research institutes, in the US or in France. For US roles I need visa sponsorship (J-1 or H-1B).
 
-[Portfolio](https://ethan-puyaubreau.github.io) · [LinkedIn](https://www.linkedin.com/in/ethan-puyaubreau/) · [ORCID](https://orcid.org/0009-0003-1770-8830) · [ethan.puyaubreau@gmail.com](mailto:ethan.puyaubreau@gmail.com)
+[Portfolio](https://ethan-puyaubreau.github.io) · [LinkedIn](https://www.linkedin.com/in/ethan-puyaubreau/) · [Google Scholar](https://scholar.google.com/citations?user=VH9ZyxYAAAAJ) · [ORCID](https://orcid.org/0009-0003-1770-8830) · [ethan.puyaubreau@gmail.com](mailto:ethan.puyaubreau@gmail.com)
 
 ---
 

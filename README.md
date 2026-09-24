@@ -19,7 +19,7 @@ Graduate Research Fellow (GRO program). I built GPU energy-measurement tooling f
 - **Went through public review.** 9 PRs, [8 to kokkos-tools](https://github.com/kokkos/kokkos-tools/pulls?q=is%3Apr+author%3Aethan-puyaubreau) and [1 to LAMMPS](https://github.com/lammps/lammps/pull/4624): 3 merged, the sampling daemon I wrote ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300), carried through review by my ORNL mentor after my stay) and two build fixes. The core ([#299](https://github.com/kokkos/kokkos-tools/pull/299)) and the NVML and Variorum connectors are still open.
 - **Presented.** Poster at the 2025 Smoky Mountains Conference ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), and invited to present at SC25 (declined, apprenticeship schedule). Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
 
-The analysis side is open source: [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos), rewritten in September 2026 as a single Rust binary that attributes measured energy to Kokkos regions and kernels, with a console table, a Perfetto trace and a standalone HTML report.
+The analysis side is open source and archived on Zenodo ([DOI 10.5281/zenodo.22943410](https://doi.org/10.5281/zenodo.22943410)): [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos), rewritten in September 2026 as a single Rust binary that attributes measured energy to Kokkos regions and kernels, with a console table, a Perfetto trace and a standalone HTML report.
 
 ## EDF R&D, work-study (2023-2026)
 

@@ -40,7 +40,7 @@ A [5-node Proxmox cluster](https://ethan-puyaubreau.github.io/cluster) I have de
 
 **[nbody-webgpu](https://github.com/ethan-puyaubreau/nbody-webgpu)**: up to 65,536 bodies in a WGSL compute shader, tiled through workgroup shared memory, leapfrog integrator. [Run it in your browser](https://ethan-puyaubreau.github.io/nbody-webgpu/).
 
-<a href="https://ethan-puyaubreau.github.io/nbody-webgpu/"><img src="galaxy.gif" alt="Spiral galaxy simulated in real time with WebGPU compute shaders" width="560"></a>
+<a href="https://ethan-puyaubreau.github.io/nbody-webgpu/"><img src="galaxy.webp" alt="Spiral galaxy simulated in real time with WebGPU compute shaders" width="560"></a>
 
 ## Stack
 

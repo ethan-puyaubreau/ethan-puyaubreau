@@ -12,7 +12,7 @@ Research software engineer in high-performance computing. M.Eng.-equivalent from
 
 ## Oak Ridge National Laboratory, summer 2025
 
-Graduate Research Fellow (GRO program). I built GPU energy-measurement tooling for **Kokkos**, the C++ performance-portability library behind many US Department of Energy codes: a sampling daemon and connectors that read power through NVML or Variorum every 20 ms, plus an AMD path through ROCm SMI that is not public yet. They attach at run time through Kokkos Tools, so an application is measured without a rebuild.
+Graduate Research Fellow (GRO program). I built GPU energy-measurement tooling for **Kokkos**, the C++ performance-portability library behind many US Department of Energy codes: a sampling daemon and connectors that read power through NVML or Variorum every 20 ms, plus an AMD path through ROCm SMI, not public yet, which is the version that ran on Frontier. They attach at run time through Kokkos Tools, so an application is measured without a rebuild.
 
 - **Ran on Frontier**, the first exascale supercomputer, and on production SLURM clusters.
 - **Found a cost a timer understates.** On the same input and result, ArborX's dense DBSCAN takes 19% less time than the default one but 25% less energy, because it also draws 9% less power (medians of 64 runs on an H100 NVL, [re-analysed in 2026](https://ethan-puyaubreau.github.io/blog/kokkos-gpu-energy); [traces and script](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster#data-and-reproduction) are public).

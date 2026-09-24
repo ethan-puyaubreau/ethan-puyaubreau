@@ -4,7 +4,7 @@
 
 Research software engineer in high-performance computing. M.Eng.-equivalent from Polytech Paris-Saclay (September 2026) after three years of work-study at EDF R&D and a research stay at Oak Ridge National Laboratory.
 
-**Available early 2027** for research software engineer roles in HPC and scientific computing, at national labs, universities or research institutes, in the US or in France. For US roles I need visa sponsorship (J-1 or H-1B; H-1B is cap-exempt at universities and most national labs, so no lottery).
+**Available early 2027** for research software engineer roles in HPC and scientific computing, at national labs, universities or research institutes, in the US or in France. For US roles I need visa sponsorship (J-1 or H-1B).
 
 [Portfolio](https://ethan-puyaubreau.github.io) · [LinkedIn](https://www.linkedin.com/in/ethan-puyaubreau/) · [Google Scholar](https://scholar.google.com/citations?user=VH9ZyxYAAAAJ) · [ORCID](https://orcid.org/0009-0003-1770-8830) · [ethan.puyaubreau@gmail.com](mailto:ethan.puyaubreau@gmail.com)
 
@@ -16,7 +16,7 @@ Graduate Research Fellow (GRO program). I built GPU energy-measurement tooling f
 
 - **Ran on Frontier**, the first exascale supercomputer, and on production SLURM clusters.
 - **Found a cost a timer understates.** On the same input and result, ArborX's dense DBSCAN takes 19% less time than the default one but 25% less energy, because it also draws 9% less power (medians of 64 runs on an H100 NVL, [re-analysed in 2026](https://ethan-puyaubreau.github.io/blog/kokkos-gpu-energy); [traces and script](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster#data-and-reproduction) are public).
-- **Went through public review.** 9 PRs, [8 to kokkos-tools](https://github.com/kokkos/kokkos-tools/pulls?q=is%3Apr+author%3Aethan-puyaubreau) and [1 to LAMMPS](https://github.com/lammps/lammps/pull/4624): 3 merged, including the sampling daemon ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300)); the core ([#299](https://github.com/kokkos/kokkos-tools/pull/299)) is in review, and the NVML and Variorum connectors build on it.
+- **Went through public review.** 9 PRs, [8 to kokkos-tools](https://github.com/kokkos/kokkos-tools/pulls?q=is%3Apr+author%3Aethan-puyaubreau) and [1 to LAMMPS](https://github.com/lammps/lammps/pull/4624): 3 merged, the sampling daemon I wrote ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300), carried through review by my ORNL mentor after my stay) and two build fixes. The core ([#299](https://github.com/kokkos/kokkos-tools/pull/299)) and the NVML and Variorum connectors are still open; bringing them to merge is my work this autumn.
 - **Presented.** Poster at the 2025 Smoky Mountains Conference ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), and invited to present at SC25 (declined, apprenticeship schedule). Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
 
 The analysis side is open source: [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos), rewritten in 2026 as a single Rust binary that attributes measured energy to Kokkos regions and kernels, with a console table, a Perfetto trace and a standalone HTML report.

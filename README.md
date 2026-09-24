@@ -16,7 +16,7 @@ Graduate Research Fellow (GRO program). I built two GPU energy-measurement tools
 
 - **Ran on Frontier**, the first exascale supercomputer, and on production SLURM clusters.
 - **Found a cost wall-clock profiling misses.** Two ArborX algorithms with identical run times used 925 J and 784 J: a 15% energy gap invisible to a timer.
-- **Went through public review.** [9 PRs to kokkos-tools and LAMMPS](https://github.com/search?q=author%3Aethan-puyaubreau+is%3Apr&type=pullrequests): 3 merged, 5 still in review, including the sampling daemon ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300)).
+- **Went through public review.** [9 PRs to kokkos-tools and LAMMPS](https://github.com/search?q=author%3Aethan-puyaubreau+is%3Apr&type=pullrequests): 3 merged, including the sampling daemon ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300)), and 5 still in review.
 - **Presented.** Poster at the 2025 Smoky Mountains Conference ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), and invited to present at SC25. Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
 
 The analysis side is open source: [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos) loads Kokkos energy output into PostgreSQL and Grafana.

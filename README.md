@@ -6,7 +6,7 @@ Research software engineer in high-performance computing. M.Eng.-equivalent from
 
 **Available early 2027** for research software engineer roles in HPC and scientific computing, at national labs, universities or research institutes, in the US or in France. For US roles I need visa sponsorship (J-1 or H-1B).
 
-[Portfolio](https://ethan-puyaubreau.github.io) · [LinkedIn](https://www.linkedin.com/in/ethan-puyaubreau/) · [Google Scholar](https://scholar.google.com/citations?user=VH9ZyxYAAAAJ) · [ORCID](https://orcid.org/0009-0003-1770-8830) · [ethan.puyaubreau@gmail.com](mailto:ethan.puyaubreau@gmail.com)
+[Portfolio](https://ethan-puyaubreau.github.io) · [LinkedIn](https://www.linkedin.com/in/ethan-puyaubreau/) · [ORCID](https://orcid.org/0009-0003-1770-8830) · [ethan.puyaubreau@gmail.com](mailto:ethan.puyaubreau@gmail.com)
 
 ---
 
@@ -19,14 +19,14 @@ Graduate Research Fellow (GRO program). I built GPU energy-measurement tooling f
 - **Went through public review.** 9 PRs, [8 to kokkos-tools](https://github.com/kokkos/kokkos-tools/pulls?q=is%3Apr+author%3Aethan-puyaubreau) and [1 to LAMMPS](https://github.com/lammps/lammps/pull/4624): 3 merged, the sampling daemon I wrote ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300), carried through review by my ORNL mentor after my stay) and two build fixes. The core ([#299](https://github.com/kokkos/kokkos-tools/pull/299)) and the NVML and Variorum connectors are still open.
 - **Presented.** Poster at the 2025 Smoky Mountains Conference ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), and invited to present at SC25 (declined, apprenticeship schedule). Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
 
-The analysis side is open source: [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos), rewritten in 2026 as a single Rust binary that attributes measured energy to Kokkos regions and kernels, with a console table, a Perfetto trace and a standalone HTML report.
+The analysis side is open source: [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos), rewritten in September 2026 as a single Rust binary that attributes measured energy to Kokkos regions and kernels, with a console table, a Perfetto trace and a standalone HTML report.
 
 ## EDF R&D, work-study (2023-2026)
 
 On the C++ platform that simulates EDF's nuclear reactor cores (500k+ lines, 30+ engineers):
 
 - **Wrote the memory and compute-time profilers** (C++, Python bindings). The memory profiler pinned down a memory blow-up the team had been chasing for days.
-- **Developed the prototype of a new modular architecture for the neutronics solvers** and measured it with those tools: bit-for-bit identical results, **up to 12% faster** on the compute core, **40% lower peak memory**.
+- **Developed the prototype of a new modular architecture for the neutronics solvers** and measured it with those tools: bit-for-bit identical results, **up to 12% faster** on the compute core, **38% lower peak memory**.
 - **Automated the test and delivery chain**: cluster runs, result validation, PostgreSQL ingestion, Debian packaging (Jenkins, GitLab CI/CD).
 - **Worked in the team's process**: code reviews given and received, five internal technical notes, Sphinx documentation for the tools.
 

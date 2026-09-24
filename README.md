@@ -4,7 +4,7 @@
 
 HPC and infrastructure engineer. M.Eng.-equivalent from Polytech Paris-Saclay (September 2026) after three years of work-study at EDF R&D and a research stay at Oak Ridge National Laboratory.
 
-**Available January 2027** for HPC, scientific software or infra roles, Paris or Bay Area. For US roles I need visa sponsorship (J-1 or H-1B; H-1B is cap-exempt at universities and most national labs, so no lottery).
+**Available early 2027** for HPC, scientific software or infra roles, Paris or Bay Area. For US roles I need visa sponsorship (J-1 or H-1B; H-1B is cap-exempt at universities and most national labs, so no lottery).
 
 [Portfolio](https://ethan-puyaubreau.github.io) · [LinkedIn](https://www.linkedin.com/in/ethan-puyaubreau/) · [Google Scholar](https://scholar.google.com/citations?user=VH9ZyxYAAAAJ) · [ORCID](https://orcid.org/0009-0003-1770-8830) · [ethan.puyaubreau@gmail.com](mailto:ethan.puyaubreau@gmail.com)
 
@@ -16,7 +16,7 @@ Graduate Research Fellow (GRO program). I built two GPU energy-measurement tools
 
 - **Ran on Frontier**, the first exascale supercomputer, and on production SLURM clusters.
 - **Found a cost wall-clock profiling misses.** Two ArborX algorithms with identical run times used 925 J and 784 J: a 15% energy gap invisible to a timer.
-- **Went through public review.** [9 PRs to kokkos-tools and LAMMPS](https://github.com/search?q=author%3Aethan-puyaubreau+is%3Apr&type=pullrequests), 3 merged, including the sampling daemon ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300)).
+- **Went through public review.** [9 PRs to kokkos-tools and LAMMPS](https://github.com/search?q=author%3Aethan-puyaubreau+is%3Apr&type=pullrequests): 3 merged, 5 still in review, including the sampling daemon ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300)).
 - **Presented.** Poster at the 2025 Smoky Mountains Conference ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), and invited to present at SC25. Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
 
 The analysis side is open source: [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos) loads Kokkos energy output into PostgreSQL and Grafana.
@@ -49,4 +49,4 @@ A [5-node Proxmox cluster](https://ethan-puyaubreau.github.io/cluster) I have de
 
 ---
 
-**Hiring for HPC or infra from January 2027? [Email me](mailto:ethan.puyaubreau@gmail.com).**
+**Hiring for HPC or infra in early 2027? [Email me](mailto:ethan.puyaubreau@gmail.com).**

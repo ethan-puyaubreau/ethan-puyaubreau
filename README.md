@@ -1,10 +1,10 @@
 # Ethan Puyaubreau
 
-**I measure what code really costs on the hardware, then make it cheaper.**
+**I build research software that measures what scientific computing costs.**
 
-HPC and infrastructure engineer. M.Eng.-equivalent from Polytech Paris-Saclay (September 2026) after three years of work-study at EDF R&D and a research stay at Oak Ridge National Laboratory.
+Research software engineer in high-performance computing. M.Eng.-equivalent from Polytech Paris-Saclay (September 2026) after three years of work-study at EDF R&D and a research stay at Oak Ridge National Laboratory.
 
-**Available early 2027** for HPC, scientific software or infra roles, Paris or Bay Area. For US roles I need visa sponsorship (J-1 or H-1B; H-1B is cap-exempt at universities and most national labs, so no lottery).
+**Available early 2027** for research software engineer roles in HPC and scientific computing, at national labs, universities or research institutes, in the US or in France. For US roles I need visa sponsorship (J-1 or H-1B; H-1B is cap-exempt at universities and most national labs, so no lottery).
 
 [Portfolio](https://ethan-puyaubreau.github.io) · [LinkedIn](https://www.linkedin.com/in/ethan-puyaubreau/) · [Google Scholar](https://scholar.google.com/citations?user=VH9ZyxYAAAAJ) · [ORCID](https://orcid.org/0009-0003-1770-8830) · [ethan.puyaubreau@gmail.com](mailto:ethan.puyaubreau@gmail.com)
 
@@ -12,26 +12,27 @@ HPC and infrastructure engineer. M.Eng.-equivalent from Polytech Paris-Saclay (S
 
 ## Oak Ridge National Laboratory, summer 2025
 
-Graduate Research Fellow (GRO program). I built two GPU energy-measurement tools for **Kokkos**, the US Department of Energy's performance-portability framework: a multi-vendor one for NVIDIA and AMD GPUs (NVML, ROCm-SMI) and a finer NVIDIA one that samples every ~10 ms.
+Graduate Research Fellow (GRO program). I built two GPU energy-measurement tools for **Kokkos**, the US Department of Energy's performance-portability framework: a multi-vendor one for NVIDIA and AMD GPUs (NVML, ROCm-SMI) and a finer NVIDIA one that samples every ~10 ms. They attach at run time through Kokkos Tools, so an application is measured without a rebuild.
 
 - **Ran on Frontier**, the first exascale supercomputer, and on production SLURM clusters.
-- **Found a cost wall-clock profiling misses.** Two ArborX algorithms with identical run times used 925 J and 784 J: a 15% energy gap invisible to a timer.
+- **Found a cost a timer understates.** On the same input and result, ArborX's dense DBSCAN takes 19% less time than the default one but 25% less energy, because it also draws 9% less power (medians of 64 runs on an H100 NVL, [re-analysed in 2026](https://ethan-puyaubreau.github.io/blog/kokkos-gpu-energy)).
 - **Went through public review.** [9 PRs to kokkos-tools and LAMMPS](https://github.com/search?q=author%3Aethan-puyaubreau+is%3Apr&type=pullrequests): 3 merged, including the sampling daemon ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300)), and 5 still in review.
-- **Presented.** Poster at the 2025 Smoky Mountains Conference ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), and invited to present at SC25. Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
+- **Presented.** Poster at the 2025 Smoky Mountains Conference ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), and invited to present at SC25 (declined, apprenticeship schedule). Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
 
-The analysis side is open source: [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos) loads Kokkos energy output into PostgreSQL and Grafana.
+The analysis side is open source: [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos), rewritten in 2026 as a single Rust binary that attributes measured energy to Kokkos regions and kernels, with a console table, a Perfetto trace and a standalone HTML report.
 
 ## EDF R&D, work-study (2023-2026)
 
 On the C++ platform that simulates EDF's nuclear reactor cores (500k+ lines, 30+ engineers):
 
 - **Wrote the memory and compute-time profilers** (C++, Python bindings). The memory profiler pinned down a memory blow-up the team had been chasing for days.
-- **Rebuilt the neutronics solvers as a modular prototype** and measured it with those tools: bit-for-bit identical results, **up to 12% faster** on the compute core, **40% lower peak memory**.
+- **Developed the prototype of a new modular architecture for the neutronics solvers** and measured it with those tools: bit-for-bit identical results, **up to 12% faster** on the compute core, **40% lower peak memory**.
 - **Automated the test and delivery chain**: cluster runs, result validation, PostgreSQL ingestion, Debian packaging (Jenkins, GitLab CI/CD).
+- **Worked in the team's process**: code reviews given and received, five internal technical notes, Sphinx documentation for the tools.
 
 ## Infrastructure I run
 
-A [5-node Proxmox cluster](https://ethan-puyaubreau.github.io/cluster) I have designed and operated alone since 2020: K3s, Ceph, Traefik, Authelia SSO, VyOS-segmented network, self-hosted Git with CI/CD, Prometheus and Grafana. About twenty services for ~60 regular users, and every incident is mine.
+A [5-node Proxmox cluster](https://ethan-puyaubreau.github.io/cluster) I have designed and operated alone since 2020, for about twenty services and ~60 regular users. Over the years it has run K3s, Ceph, Ansible and GitLab CI; today Gitea and Coolify carry the CI/CD, behind Traefik, Authelia SSO and a VyOS-segmented network, watched by Prometheus and Grafana. Every incident is mine.
 
 **[proxmox-ops-mcp](https://github.com/ethan-puyaubreau/proxmox-ops-mcp)** lets an AI assistant operate that cluster. Every command goes through a deny-by-default classifier; destructive ones wait for my approval on a separate channel and land in an append-only audit log, so a prompt injection cannot approve itself.
 
@@ -44,9 +45,10 @@ A [5-node Proxmox cluster](https://ethan-puyaubreau.github.io/cluster) I have de
 ## Stack
 
 **HPC:** C++17/20 · CUDA · Kokkos · MPI · OpenMP · SLURM · NVML · ROCm-SMI\
-**Infra:** Proxmox · K3s · Ceph · Docker · Traefik · Ansible · GitLab CI\
-**Also:** Python · PyBind11 · PostgreSQL · TypeScript · WebGPU
+**Research software:** Python · PyBind11 · CMake · Rust · Git · GitHub Actions · GitLab CI · Sphinx\
+**Infra:** Proxmox · K3s · Ceph · Docker · Traefik · Ansible\
+**Also:** PostgreSQL · TypeScript · WebGPU
 
 ---
 
-**Hiring for HPC or infra in early 2027? [Email me](mailto:ethan.puyaubreau@gmail.com).**
+**Hiring a research software engineer for early 2027? [Email me](mailto:ethan.puyaubreau@gmail.com).**

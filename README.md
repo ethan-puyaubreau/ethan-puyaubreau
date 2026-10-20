@@ -16,7 +16,7 @@ Graduate Research Fellow (GRO program). I built GPU energy-measurement tooling f
 
 - **Ran on Frontier**, the first exascale supercomputer (the ROCm SMI version), and on production SLURM clusters.
 - **Found a cost a timer understates.** On the same input and result, ArborX's dense DBSCAN takes 19% less time than the default one but 25% less energy, because it also draws 9% less power (medians of 64 runs on an H100 NVL, [re-analysed in 2026](https://ethan-puyaubreau.github.io/blog/kokkos-gpu-energy); [traces and script](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster#data-and-reproduction) are public).
-- **Went through public review.** 10 PRs, [9 to kokkos-tools](https://github.com/kokkos/kokkos-tools/pulls?q=is%3Apr+author%3Aethan-puyaubreau) and [1 to LAMMPS](https://github.com/lammps/lammps/pull/4624): 4 merged: the sampling daemon I started ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300), reworked through review by my ORNL mentor after my stay), two build fixes and a fix for the nightly ROCm builds ([#349](https://github.com/kokkos/kokkos-tools/pull/349)). The core ([#299](https://github.com/kokkos/kokkos-tools/pull/299)), the NVML connector ([#301](https://github.com/kokkos/kokkos-tools/pull/301), changes requested) and the Variorum connector with its unit tests ([#302](https://github.com/kokkos/kokkos-tools/pull/302), draft) are still open.
+- **Went through public review.** 11 PRs, [10 to kokkos-tools](https://github.com/kokkos/kokkos-tools/pulls?q=is%3Apr+author%3Aethan-puyaubreau) and [1 to LAMMPS](https://github.com/lammps/lammps/pull/4624): 4 merged: the sampling daemon I started ([kokkos-tools #300](https://github.com/kokkos/kokkos-tools/pull/300), reworked through review by my ORNL mentor after my stay), two build fixes and a fix for the nightly ROCm builds ([#349](https://github.com/kokkos/kokkos-tools/pull/349)). The core ([#299](https://github.com/kokkos/kokkos-tools/pull/299)), the NVML connector ([#301](https://github.com/kokkos/kokkos-tools/pull/301), changes requested) and the Variorum connector with its unit tests ([#302](https://github.com/kokkos/kokkos-tools/pull/302), draft) are still open, as is a follow-up that fixes, builds and tests the daemon ([#350](https://github.com/kokkos/kokkos-tools/pull/350)).
 - **Presented.** Poster at the 2025 Smoky Mountains Conference and at an ORNL internal session ([*Understanding GPU energy dynamics in HPC applications*](https://github.com/ethan-puyaubreau/smc2025-gpu-energy-poster)), and invited to present at SC25 (declined, apprenticeship schedule). Cited in ORNL's [S4PST 2024-2025 report](https://www.osti.gov/biblio/3016977).
 
 The analysis side is open source and archived on Zenodo ([DOI 10.5281/zenodo.22943410](https://doi.org/10.5281/zenodo.22943410)): [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos), rewritten in September 2026 as a single Rust binary that attributes measured energy to Kokkos regions and kernels, with a console table, a Perfetto trace and a standalone HTML report.
@@ -32,7 +32,7 @@ On the C++ platform that simulates EDF's nuclear reactor cores (500k+ lines, 30+
 
 ## Infrastructure I run
 
-A [5-node Proxmox cluster](https://ethan-puyaubreau.github.io/cluster) I have designed and operated alone since 2020, for about twenty services and ~60 regular users. Over the years it has run Ceph, Ansible and GitLab CI; today Gitea and Coolify carry the CI/CD and a Kubernetes (K3s) VM runs alongside, behind Traefik, Authelia SSO and a VyOS-segmented network, watched by Gatus and Uptime Kuma. Every incident is mine.
+A [5-node Proxmox cluster](https://ethan-puyaubreau.github.io/cluster) I have designed and operated alone since 2020, for about twenty services and ~60 regular users. Over the years it has run Ceph, Ansible and GitLab CI; today Gitea and Coolify carry the CI/CD and a Kubernetes VM runs alongside, behind Traefik, Authelia SSO and a VyOS-segmented network, watched by Gatus and Uptime Kuma. Every incident is mine.
 
 **[proxmox-ops-mcp](https://github.com/ethan-puyaubreau/proxmox-ops-mcp)** lets an AI assistant operate that cluster. Every command goes through a deny-by-default classifier; destructive ones wait for my approval on a separate channel and land in an append-only audit log, so a prompt injection cannot approve itself.
 
@@ -46,7 +46,7 @@ A [5-node Proxmox cluster](https://ethan-puyaubreau.github.io/cluster) I have de
 
 **HPC:** C++17/20 · CUDA · Kokkos · MPI · OpenMP · SLURM · NVML · ROCm-SMI\
 **Research software:** Python · PyBind11 · CMake · Rust · Git · GitHub Actions · GitLab CI · Sphinx\
-**Infra:** Proxmox · K3s · Ceph · Docker · Traefik · Ansible\
+**Infra:** Proxmox · Kubernetes · Ceph · Docker · Traefik · Ansible\
 **Also:** PostgreSQL · TypeScript · WebGPU
 
 ---

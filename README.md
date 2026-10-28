@@ -21,6 +21,8 @@ Summer intern, GRO program. I built GPU energy-measurement tooling for **Kokkos*
 
 The analysis side is open source and archived on Zenodo ([DOI 10.5281/zenodo.22943410](https://doi.org/10.5281/zenodo.22943410)): [energy-dashboard-for-kokkos](https://github.com/ethan-puyaubreau/energy-dashboard-for-kokkos), rewritten in September 2026 as a single Rust binary that attributes measured energy to Kokkos regions and kernels, with a console table, a Perfetto trace and a standalone HTML report.
 
+In October 2026 I repeated the DBSCAN study on an AMD Instinct MI210 with [mi210-energy-counter](https://github.com/ethan-puyaubreau/mi210-energy-counter): a characterization of AMD's cumulative energy counter (15.3 µJ resolution, refreshed every millisecond) and an experimental Kokkos Tools connector that samples it, separate from the version that ran on Frontier. Same input, 64 runs of each: the dense implementation takes 38% less time and 42% less energy.
+
 ## EDF R&D, work-study (2023-2026)
 
 On the C++ platform that simulates EDF's nuclear reactor cores (500k+ lines, 30+ engineers):
@@ -29,6 +31,14 @@ On the C++ platform that simulates EDF's nuclear reactor cores (500k+ lines, 30+
 - **Developed the prototype of a new modular architecture for the neutronics solvers** and measured it with those tools: bit-for-bit identical results, **up to 12% faster** on the compute core, **38% lower peak memory**.
 - **Automated the test and delivery chain**: cluster runs, result validation, PostgreSQL ingestion, Debian packaging (Jenkins, GitLab CI/CD).
 - **Worked in the team's process**: code reviews given and received, five internal technical notes, Sphinx documentation for the tools.
+
+## heapline
+
+**[heapline](https://github.com/ethan-puyaubreau/heapline)** reports the heap usage of a Linux program through `LD_PRELOAD`, without recompiling it. The idea comes from the memory profiler I wrote at EDF; heapline is a new implementation, written after my work-study ended from the same open mechanism (interposing the glibc allocation functions) and none of the internal code, built the way I wanted that tool to be.
+
+- **Packaged**: x86_64 and aarch64 archives, RPM and Debian packages, a manual page, six releases since September 2026.
+- **[Documented](https://ethan-puyaubreau.github.io/heapline/)** with tutorials for one program and for an MPI job, and a case study of miniAMR, LULESH and CloverLeaf built with Spack.
+- **[heapline-gate](https://github.com/ethan-puyaubreau/heapline-gate)** fails a CI build when a program's heap peak exceeds a budget.
 
 ## Infrastructure I run
 
@@ -45,7 +55,7 @@ A [5-node Proxmox cluster](https://ethan-puyaubreau.github.io/cluster) I have de
 ## Stack
 
 **HPC:** C++17/20 · CUDA · Kokkos · MPI · OpenMP · SLURM · NVML · ROCm-SMI\
-**Research software:** Python · PyBind11 · CMake · Rust · Git · GitHub Actions · GitLab CI · Sphinx\
+**Research software:** Python · PyBind11 · CMake · Spack · Rust · Git · GitHub Actions · GitLab CI · Sphinx\
 **Infra:** Proxmox · Kubernetes · Ceph · Docker · Traefik · Ansible\
 **Also:** PostgreSQL · TypeScript · WebGPU
 
